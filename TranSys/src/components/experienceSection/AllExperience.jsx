@@ -42,24 +42,23 @@ const experiences = [
 
 const AllExperience = () => {
   return (
-    <div className="flex md:flex-row sm:flex-col items-center justify-between">
-      {experiences.map((experience, index) => {
-        return (
-          <React.Fragment key={index}>
-            <SingleExperience experience={experience} />
-            {index < experiences.length - 1 ? (
-              <motion.div
-                variants={fadeIn("right", 0.2)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0 }}
-              >
-                <FaArrowRight className="text-6xl text-orange-500 lg:block sm:hidden" />
-              </motion.div>
-            ) : null}
-          </React.Fragment>
-        );
-      })}
+    <div className="sm:grid sm:grid-cols-1 lg:flex lg:flex-row items-center justify-between gap-6">
+      {experiences.map((experience, index) => (
+        <React.Fragment key={index}>
+          <SingleExperience experience={experience} />
+          {index < experiences.length - 1 ? (
+            <motion.div
+              variants={fadeIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0 }}
+            >
+              {/* Arrow only on large screens */}
+              <FaArrowRight className="text-6xl text-orange-500 hidden lg:block" />
+            </motion.div>
+          ) : null}
+        </React.Fragment>
+      ))}
     </div>
   );
 };

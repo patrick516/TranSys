@@ -14,7 +14,7 @@ const ExperienceMain = () => {
         whileInView="show"
         viewport={{ once: false, amount: 0.7 }}
       >
-        {/* <ExperienceText /> */}
+        <ExperienceText />
       </motion.div>
       <motion.div
         variants={fadeIn("down", 0.2)}

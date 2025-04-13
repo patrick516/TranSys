@@ -22,6 +22,7 @@
   --blueDark: #0e5e95;
   --orangeBright: #f97316;
   /* breakpoints */
+  --breakpoint-xs: 20rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
