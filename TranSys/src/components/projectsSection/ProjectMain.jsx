@@ -37,7 +37,7 @@ const projects = [
 
 const ProjectMain = () => {
   return (
-    <div id="projects" className="max-w-[1200px] mx-auto  px-4">
+    <div id="projects" className="max-w-[1200px] mx-auto px-4">
       <motion.div
         variants={fadeIn("up", 0.2)}
         initial="hidden"
@@ -46,18 +46,18 @@ const ProjectMain = () => {
       >
         <ProjectText />
       </motion.div>
-      <div className="flex flex-col gap-20  max-w-[900px] mx-auto mt-12">
-        {projects.map((item, index) => {
-          return (
-            <SingleProject
-              key={index}
-              name={item.name}
-              year={item.year}
-              align={item.align}
-              image={item.image}
-            />
-          );
-        })}
+
+      {/* ✅ Grid of cards */}
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-12">
+        {projects.map((item, index) => (
+          <SingleProject
+            key={index}
+            name={item.name}
+            year={item.year}
+            align={item.align}
+            image={item.image}
+          />
+        ))}
       </div>
     </div>
   );
